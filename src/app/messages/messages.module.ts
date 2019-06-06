@@ -7,7 +7,8 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatStepperModule,
-  MatIconModule
+  MatIconModule,
+  MatAutocompleteModule
 } from '@angular/material';
 
 import { MessagesRoutingModule } from './messages-routing.module';
@@ -26,7 +27,8 @@ import { MessageNewComponent } from './message-new/message-new.component';
     MatFormFieldModule,
     MatInputModule,
     MatStepperModule,
-    MatIconModule
+    MatIconModule,
+    MatAutocompleteModule
   ]
 })
 export class MessagesModule {}
