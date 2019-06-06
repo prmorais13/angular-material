@@ -29,6 +29,7 @@ import { MessageNewComponent } from './message-new/message-new.component';
     MatStepperModule,
     MatIconModule,
     MatAutocompleteModule
-  ]
+  ],
+  exports: []
 })
 export class MessagesModule {}

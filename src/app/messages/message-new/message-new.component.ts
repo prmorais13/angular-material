@@ -30,11 +30,17 @@ export class MessageNewComponent implements OnInit {
   ngOnInit() {
     this.firstFormGroup = this.formBuilder.group({
       emailCtrl: ['', [Validators.required]],
-      priorityCtrl: ['', [Validators.required]]
+      priorityCtrl: ['', [Validators.required]],
+      departamentCtrl: ['', [Validators.required]]
     });
 
     this.secondFormGroup = this.formBuilder.group({
       messageCtrl: ['', [Validators.required]]
     });
+  }
+
+  getDepartamentName(departament: object) {
+    // tslint:disable-next-line: no-string-literal
+    return departament ? departament['name'] : undefined;
   }
 }

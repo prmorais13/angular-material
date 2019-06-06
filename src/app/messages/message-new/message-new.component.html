@@ -16,6 +16,16 @@
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Departament" [matAutocomplete]="auto2" formControlName="departamentCtrl" required>
+        <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete" [displayWith]="getDepartamentName">
+          <mat-option *ngFor="let departament of departaments" [value]="departament">
+            {{ departament.name }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
       <div>
         <button mat-icon-button matStepperNext>
           <mat-icon>arrow_forward</mat-icon>
