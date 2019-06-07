@@ -1,8 +1,16 @@
-.example-container {
+/* .example-container {
   display: flex;
   flex-direction: column;
 }
 
 .example-container > * {
+  width: 100%;
+} */
+.stepperCenter {
+  width: 600px;
+  margin: auto;
+}
+
+.stepperCenter .full-width {
   width: 100%;
 }

@@ -1,14 +1,13 @@
-<mat-horizontal-stepper [linear]="false" #stepper>
-
+<mat-horizontal-stepper class="stepperCenter" [linear]="false" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     <ng-template matStepLabel>Enter recipient info</ng-template>
 
-    <form [formGroup]="firstFormGroup" class="example-container">
-      <mat-form-field>
+    <form [formGroup]="firstFormGroup">
+      <mat-form-field class="full-width">
         <input matInput placeholder="Email" formControlName="emailCtrl" required>
       </mat-form-field>
 
-      <mat-form-field>
+      <mat-form-field class="full-width">
         <input matInput placeholder="Priority" [matAutocomplete]="auto" formControlName="priorityCtrl" required>
         <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
           <mat-option *ngFor="let priority of priorities" [value]="priority">
@@ -17,7 +16,7 @@
         </mat-autocomplete>
       </mat-form-field>
 
-      <mat-form-field>
+      <mat-form-field class="full-width">
         <input matInput placeholder="Departament" [matAutocomplete]="auto2" formControlName="departamentCtrl" required>
         <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete" [displayWith]="getDepartamentName">
           <mat-option *ngFor="let departament of departaments" [value]="departament">
@@ -36,10 +35,10 @@
   </mat-step>
 
   <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup" class="example-container">
+    <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Enter message</ng-template>
 
-      <mat-form-field>
+      <mat-form-field class="full-width">
         <input matInput placeholder="Message" formControlName="messageCtrl" required>
       </mat-form-field>
 

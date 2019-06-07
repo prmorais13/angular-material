@@ -2,15 +2,22 @@
   <mat-card-header>
     <mat-card-title>New Customers</mat-card-title>
   </mat-card-header>
-
   <mat-card-content>
     <form>
       <mat-form-field class="full-width">
         <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" placeholder="email">
         <mat-hint align="end">Hint: email@domain.com</mat-hint>
-        <mat-error align="end" *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        <mat-error align="end"
+          *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required'); else message">
           Entre com um email válido!
         </mat-error>
+
+        <ng-template #message>
+          <mat-error align="end">
+            Email não pode ser vazio!
+          </mat-error>
+        </ng-template>
+
       </mat-form-field>
 
       <mat-form-field>
@@ -38,6 +45,6 @@
   </mat-card-content>
 
   <mat-card-actions>
-
+    <button mat-raised-button color="primary" (click)="openRepDialog()">SAVE</button>
   </mat-card-actions>
 </mat-card>
